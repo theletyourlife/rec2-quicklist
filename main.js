@@ -16,7 +16,7 @@ function addItem() {
 }
 
 function showItemsList() {
-    const sectionList = document.querySelector(".list")
+    let sectionList = document.querySelector(".list")
 
     sectionList.textContent = ""
     items.map((item, index) => {
@@ -38,6 +38,8 @@ function showItemsList() {
             </div>
         `
     })
+
+    localStorage.setItem("items", JSON.stringify(items))
 }
 
 function removeItem (itemName) {
@@ -66,3 +68,14 @@ function checkItem(itemName) {
    item.checked = !item.checked
    showItemsList()
 }
+
+function verifyLocalStorageItems() {
+    const localStorageItems = localStorage.getItem("items")
+
+    if (localStorageItems) {
+        items = JSON.parse(localStorageItems)
+        showItemsList()
+    }
+}
+
+verifyLocalStorageItems()
