@@ -154,5 +154,18 @@ main {
                 text-decoration: line-through;
             }
         }
+
+        button {
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            img {
+                width: 1.6rem;
+                opacity: .7;
+            }
+        }
     }
 }
