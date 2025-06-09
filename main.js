@@ -61,7 +61,7 @@ function addHideWarningClass() {
 }
 
 function checkItem(itemName) {
-    const item = item.find((item) => item.name === itemName)
+    const item = items.find((item) => item.name === itemName)
 
    item.checked = !item.checked
    showItemsList()
